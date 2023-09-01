@@ -27,14 +27,19 @@
 		</form>
 		
 		
-		
 		<div id="reveal" style="display: none; transition: opacity 1s;">
-			<label for="ical_link">Add this link to your calendar application of choice</label><br/>
-			<div class="input-group mb-3">
-				<input name="ical_link" type="text" class="form-control" id="input_to_copy" readonly>
-				<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="copyLink()">
-					<i class="bi bi-clipboard"></i>
-				</button>
+			<br/>
+			
+			<div class="row col-sm-6 offset-sm-3">
+				<hr/>
+				<br/>
+				<label for="ical_link" class="col-sm-auto col-form-label">Add this link to your calendar application of choice</label><br/>
+				<div class="input-group mb-3 col-sm-auto">
+					<input name="ical_link" type="text" class="form-control" id="input_to_copy" readonly>
+					<button class="btn btn-primary" type="button" id="button-addon2" onclick="copyLink()">
+						<i class="bi bi-clipboard"></i>
+					</button>
+				</div>
 			</div>
 		</div>
 		
