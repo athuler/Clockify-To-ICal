@@ -19,7 +19,7 @@
 	</head>
 	<body class="container text-center">
 		<h1 class="mb-3 mt-3">Clockify to iCal</h1>
-		<h2 class="mb-3">See your tracked time in your calendar</h2>
+		<h3 class="mb-3">See your tracked time in your calendar</h3>
 		<form id="input_form">
 			<div class="row mb-3 col-sm-6 offset-sm-3">
 				<label for="api_key" class="col-sm-auto col-form-label">Enter your Clockify API Key:</label>
@@ -54,9 +54,73 @@
 		
 		<br/><br/>
 		
+		
+		
+		<!-- Frequently Asked Question -->
+		<div class="col-sm-6 offset-sm-3">
+			<h3 class="mb-3">Frequently Asked Questions</h3>
+			
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							What is Clockify?
+						</button>
+					</h2>
+					<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<code><a href="https://clockify.me" target="__blank">Clockify <i class="bi bi-box-arrow-up-right"></i></a></code>  is a free time-tracking software. It's an incredibly simple and useful way to keep track of time worked on projects.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							What is Clockify to iCal?
+						</button>
+					</h2>
+					<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<code>Clockify to iCal</code> is an easy way to automatically add your tracked time to your calendar app of choice. The source code is available on <a href="https://github.com/athuler/Clockify-To-ICal" target="__blank">Github <i class="bi bi-box-arrow-up-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							How does it work?
+						</button>
+					</h2>
+					<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							After you enter your <code>Clockify API Key</code> (which you can find <a href="https://app.clockify.me/user/settings" target="__blank">here <i class="bi bi-box-arrow-up-right"></i></a>) and the <code>number of events</code> to display (we recommend <code>500</code> to start), you will get a link to add to your calendar application of choice (Google Calendar, iCalendar, Outlook...).<br/><br/>
+							After a few seconds, you will see your tracked time appear as events in your calendar! The title of the event is the name of the project, and the description of the event is the description of the timer.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+							Do you collect any data?
+						</button>
+					</h2>
+					<div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							We do not store API Keys. We use Google Analytics which collects various data points on user behavior to help us improve this tool. That data is subject to <a href="https://policies.google.com/privacy" target="__blank">Google's Privacy Policy <i class="bi bi-box-arrow-up-right"></i></a>.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<br/><br/>
+		
 		<a href="https://donate.stripe.com/00g2969475Pd4iQ5kk" target="__blank"><button class="btn btn-primary mb-3">Support this project</button></a>
 		
 		<p>Bugs? Feature suggestions? <a href="mailto:hi@clockifytoical.com">Contact us</a>!</p>
+		
+		
+		
 		
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
