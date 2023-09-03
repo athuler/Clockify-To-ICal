@@ -3,6 +3,7 @@
 // Initialization
 header("Content-Type: text/calendar;charset=utf-8");
 $curl = curl_init();
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 if(!isset($_GET["key"])) {
 	exit("ERROR - Missing API Key");
@@ -19,11 +20,24 @@ require_once("icalendar/zapcallib.php");
 $icalobj = new ZCiCal();
 
 
+// Track Usage
+curl_setopt_array($curl, [
+	CURLOPT_URL => "https://ihook.us/receivers/be2ed27bee1f45caa875dcb1523d3ff6",
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_ENCODING => "",
+	CURLOPT_MAXREDIRS => 10,
+	CURLOPT_TIMEOUT => 30,
+	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	CURLOPT_CUSTOMREQUEST => "GET",
+]);
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+
 // Get User's ID and Workspace ID
 
 $url = "https://api.clockify.me/api/v1/user";
 
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 curl_setopt_array($curl, [
 	CURLOPT_URL => $url,
