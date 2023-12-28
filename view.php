@@ -1,7 +1,14 @@
 <?php
 
 // Initialization
-#header("Content-Type: text/calendar;charset=utf-8");
+//header("Content-Type: text/calendar;charset=utf-8");
+echo get_include_path() . "\n";
+echo("\n");
+
+$path = realpath("icalendar/zapcallib.php");
+//set_include_path(realpath("icalendar"));
+echo $path;
+require $path ;
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 require_once("secret.php");
@@ -17,7 +24,8 @@ if(isset($_GET["num_items"]) and is_int(intval($_GET["num_items"]))) {
 }
 
 // Create calendar
-require_once(realpath("icalendar/zapcallib.php"));
+
+
 $icalobj = new ZCiCal();
 
 echo("IMPORTED CALENDAR");

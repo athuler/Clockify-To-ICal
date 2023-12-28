@@ -23,6 +23,7 @@ if(!defined('_ZAPCAL_BASE'))
 	 */
 	define('_ZAPCAL_BASE',__DIR__);
 }
-
-require_once(_ZAPCAL_BASE . '/includes/framework.php');
+//echo("\n" . _ZAPCAL_BASE . '\\includes\\framework.php' . "\n");
+//require_once(_ZAPCAL_BASE . '\\includes\\framework.php');
+require_once(realpath('includes/framework.php'));
 
