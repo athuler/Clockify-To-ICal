@@ -1,9 +1,10 @@
 <?php
 
 // Initialization
-header("Content-Type: text/calendar;charset=utf-8");
+#header("Content-Type: text/calendar;charset=utf-8");
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+require_once("secret.php");
 
 if(!isset($_GET["key"])) {
 	exit("ERROR - Missing API Key");
@@ -22,17 +23,23 @@ $icalobj = new ZCiCal();
 
 // Track Usage
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://ihook.us/receivers/be2ed27bee1f45caa875dcb1523d3ff6",
+	CURLOPT_URL => "https://in.logs.betterstack.com/",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_ENCODING => "",
 	CURLOPT_MAXREDIRS => 10,
 	CURLOPT_TIMEOUT => 30,
 	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 	CURLOPT_CUSTOMREQUEST => "GET",
+	CURLOPT_HTTPHEADER => [
+			"Content-Type: application/json",
+			"Authorization: " . $BETTERSTACK_API_TOKEN
+	],
 ]);
 $response = curl_exec($curl);
 $err = curl_error($curl);
+echo var_dump($response);
 
+//exit();
 
 // Get User's ID and Workspace ID
 
@@ -62,8 +69,8 @@ if ($err) {
 	exit("ERROR (cURL) - " . $err);
 }
 
-if (curl_getinfo($curl)['http_code'] != 200) {
-	exit("ERROR - Incorrect API Key");
+if (curl_getinfo($curl)['http_code'] != 200 and curl_getinfo($curl)['http_code'] != 202) {
+	exit("ERROR - LOGGING");
 }
 
 $res = json_decode($response, true);
