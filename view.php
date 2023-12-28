@@ -38,23 +38,23 @@ curl_setopt_array($curl, [
 	CURLOPT_MAXREDIRS => 10,
 	CURLOPT_TIMEOUT => 30,
 	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	CURLOPT_CUSTOMREQUEST => "GET",
+	CURLOPT_CUSTOMREQUEST => "POST",
 	CURLOPT_HTTPHEADER => [
 			"Content-Type: application/json",
 			"Authorization: " . $BETTERSTACK_API_TOKEN
 	],
+	CURLOPT_POSTFIELDS => json_encode(array(
+		"IP" => $_SERVER['REMOTE_ADDR'],
+		"User Agent" => $_SERVER['HTTP_USER_AGENT']
+	)),
 ]);
 $response = curl_exec($curl);
 $err = curl_error($curl);
 //echo var_dump($response);
 
-//exit();
 
 // Get User's ID and Workspace ID
-
 $url = "https://api.clockify.me/api/v1/user";
-
-
 curl_setopt_array($curl, [
 	CURLOPT_URL => $url,
 	CURLOPT_RETURNTRANSFER => true,
@@ -70,8 +70,6 @@ curl_setopt_array($curl, [
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
-
 
 
 if ($err) {
