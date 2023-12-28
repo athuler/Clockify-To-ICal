@@ -17,9 +17,10 @@ if(isset($_GET["num_items"]) and is_int(intval($_GET["num_items"]))) {
 }
 
 // Create calendar
-require_once("icalendar/zapcallib.php");
+require_once(realpath("icalendar/zapcallib.php"));
 $icalobj = new ZCiCal();
 
+echo("IMPORTED CALENDAR");
 
 // Track Usage
 curl_setopt_array($curl, [
