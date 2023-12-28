@@ -25,5 +25,12 @@ if(!defined('_ZAPCAL_BASE'))
 }
 //echo("\n" . _ZAPCAL_BASE . '\\includes\\framework.php' . "\n");
 //require_once(_ZAPCAL_BASE . '\\includes\\framework.php');
-require_once(realpath('includes/framework.php'));
+//echo(__DIR__ . "\\includes\\framework.php");
+//echo("\n==>" . __DIR__ . '\\includes\\framework.php' . "<==\n");
+//echo("\n=>" . realpath('includes/framework.php') . "<=\n");
+//require_once(realpath('includes/framework.php'));
+
+$path = realpath(str_replace("\\","/",__DIR__ . "\\includes\\framework.php"));
+//echo $path;
+require_once($path);
 
